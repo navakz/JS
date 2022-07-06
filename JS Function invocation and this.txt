@@ -1,0 +1,25 @@
+- Simple function invocation
+
+function hello(thing) {
+  console.log("Hello " + thing);
+}
+
+//invocation
+hello("world");
+
+- Member Functions
+
+var person = {
+  name: "Brendan Eich",
+  hello: function(thing) {
+    console.log(this + " says hello " + thing);
+  }
+}
+
+// this:
+person.hello("world")
+
+// desugars to this:
+person.hello.call(person, "world");
+
+
